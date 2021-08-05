@@ -16,6 +16,7 @@ def alpha_numeric_sort(input):
             continue
 
     res = res[:-1]
-    return sorted(res)
+    res.sort(key=lambda x:(not x.islower() and not x.isdigit(), x))
+    return res
 
 print(alpha_numeric_sort('A12a4'))
